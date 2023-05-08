@@ -17,11 +17,11 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-## Ticket 1: Add Agent relationship field to the Facility table
-### Description:
+### Ticket 1: Add Agent relationship field to the Facility table
+#### Description:
 Modify the Facility table in the database to include a new field that stores a JSON object. This JSON object will contain key-value pairs, where the keys are the custom facility-unique IDs and the values are the Agent UUIDs.
 
-### Acceptance Criteria:
+#### Acceptance Criteria:
 
 A new field named 'agent_relationships' is added to the Facility table.
 The 'agent_relationships' field should be of JSON data type to store the key-value pairs.
@@ -29,54 +29,54 @@ The database schema is updated with the new field.
 Time/Effort Estimate:
 2-4 hours
 
-### Implementation Details:
+#### Implementation Details:
 
 Update the database schema by adding the 'agent_relationships' field to the Facility table.
 Perform a migration to apply the schema changes to the database.
 
-## Ticket 2: Create functionality for Facilities to save custom facility-unique IDs for Agent relationships
-### Description:
+### Ticket 2: Create functionality for Facilities to save custom facility-unique IDs for Agent relationships
+#### Description:
 Develop a feature that allows Facilities to save custom facility-unique IDs for each Agent they have a relationship with.
 
-### Acceptance Criteria:
+#### Acceptance Criteria:
 
 Facilities can add or update custom facility-unique IDs for Agent relationships through the platform's user interface.
 The custom facility-unique IDs are saved in the 'agent_relationships' field in the Facility table in the database.
 Time/Effort Estimate:
 8-12 hours
 
-### Implementation Details:
+#### Implementation Details:
 
 Add a new input field for the custom facility-unique ID in the user interface where Facilities manage their Agent relationships.
 Update the backend to handle the custom facility-unique ID input and save it to the 'agent_relationships' field in the Facility table when a Facility adds or updates an Agent relationship.
 Implement validation for the custom facility-unique ID input to ensure it meets any requirements (e.g., UUID format).
 
-## Ticket 3: Modify the getShiftsByFacility function to include custom facility-unique IDs for Agent relationships
-### Description:
+### Ticket 3: Modify the getShiftsByFacility function to include custom facility-unique IDs for Agent relationships
+#### Description:
 Update the getShiftsByFacility function to extract the custom facility-unique IDs for Agent relationships from the 'agent_relationships' JSON field in the returned Shift data.
 
-### Acceptance Criteria:
+#### Acceptance Criteria:
 
 The getShiftsByFacility function returns Shift data that includes the custom facility-unique ID for each Agent relationship.
 Time/Effort Estimate:
 4-6 hours
 
-### Implementation Details:
+#### Implementation Details:
 
 Modify the SQL query in the getShiftsByFacility function to include the 'agent_relationships' JSON field from the Facility table.
 Update the function to extract and return the custom facility-unique IDs for Agent relationships as part of the Shift data.
 
-## Ticket 4: Update the generateReport function to use custom facility-unique IDs for Agent relationships
-### Description:
+### Ticket 4: Update the generateReport function to use custom facility-unique IDs for Agent relationships
+#### Description:
 Modify the generateReport function to use custom facility-unique IDs for Agent relationships in the generated PDF report.
 
-### Acceptance Criteria:
+#### Acceptance Criteria:
 
 The generateReport function uses the custom facility-unique ID for each Agent relationship in the generated report.
 Time/Effort Estimate:
 4-6 hours
 
-### Implementation Details:
+#### Implementation Details:
 
 Update the generateReport function to check for the presence of a custom facility-unique ID for each Agent relationship in the Shift data.
 Modify the function to use the custom facility-unique ID in the report when available.
