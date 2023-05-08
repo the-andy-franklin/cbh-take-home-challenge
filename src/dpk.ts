@@ -1,13 +1,11 @@
 import crypto from "crypto";
 
-const hashValue = (value: string) => {
-  return (
-    crypto
-      .createHash("sha3-512")
-      .update(value)
-      .digest("hex")
-  );
-}
+const hashValue = (value: string) => (
+  crypto
+    .createHash("sha3-512")
+    .update(value)
+    .digest("hex")
+);
 
 export const deterministicPartitionKey = (event: { partitionKey: string } = { partitionKey: '' }) => {
   const TRIVIAL_PARTITION_KEY = "0";
